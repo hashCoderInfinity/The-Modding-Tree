@@ -46,6 +46,10 @@ function getPointGen() {
 	// upgrades
 	if (hasUpgrade('p', 11)) 
 		gain = gain.times(2)
+	if (hasUpgrade('p', 12)) 
+		gain = gain.times(upgradeEffect('p', 12))
+	if (player.b.points.gt(0))
+		gain = gain.times(layers.b.effect())	
 
 	return gain
 }
